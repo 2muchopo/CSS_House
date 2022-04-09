@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>House</title>
+    </head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: whitesmoke;
+            width: 600px;
+            height: 500px;
+            margin: 30px auto;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        .roof {
+            width: 0;
+            height: 0;
+            border-bottom: 200px solid rgba(165, 42, 42, 0.911);
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+            position: absolute;
+            top: 10px;
+            left: 100px;
+        }
+        .vent {
+            width: 80px;
+            height: 80px;
+            border-radius: 60%;
+            background-color: whitesmoke;
+            background-image: linear-gradient(white,black);
+
+            position: absolute;
+            top: 100px;
+            left: 260px;
+        }
+
+        .wall {
+            width: 300px;
+            height: 250px;
+            background-color: rgba(165, 42, 42, 0.616);
+            border: 2px solid black;
+            position: absolute;
+            top: 210px;
+            left: 150px;
+        }
+
+        .door {
+            width: 80px;
+            height: 120px;
+            background-image: linear-gradient(to right,white,black);
+            border: 2px solid black;
+            position: absolute;
+            top: 340px;
+            left: 260px;
+            z-index: 5;
+            animation: open 3s linear both;
+        }
+
+        @keyframes open {
+            10% {
+                transform: rotateY(40deg);
+            }
+            20% {
+                transform: rotateY(50deg);
+            }
+
+            30% {
+                transform: rotateY(60deg);
+            }
+
+            40% {
+                transform: rotateY(70deg);
+            }
+
+            50% {
+                transform: rotateY(80deg);
+            }
+
+            60% {
+                transform: rotateY(90deg);
+            }
+
+
+        }
+        .door_knob {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            top: 55px;
+            left: 7px;
+            z-index: 7;
+        }
+
+        .window {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.555);
+            position: absolute;
+            top: 260px;
+            left: 170px;
+            z-index: 2;
+        }
+
+        .window2 {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.555);
+            position: absolute;
+            top: 260px;
+            right: 170px;
+            z-index: 7;
+        }
+        .louvers {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 260px;
+            right: 170px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+        .louvers1 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 275px;
+            right: 170px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+
+        .louvers2 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 290px;
+            right: 170px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+        .louvers3 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 305px;
+            right: 170px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+
+        .louvers4 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 260px;
+            left: 175px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+        .louvers5 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 275px;
+            left: 175px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+
+        .louvers6 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 290px;
+            left: 175px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+        .louvers7 {
+            width: 65px;
+            height: 20px;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 305px;
+            left: 175px;
+            z-index: 10;
+            transform: rotateX(60deg) skewX(25deg);
+            animation: opo 3s infinite forwards;
+        }
+
+        @keyframes opo {
+            10% {
+                transform: rotateX(60deg) skewX(25deg)
+            }
+            20% {
+                transform: rotateX(55deg) skewX(25deg)
+            }
+            30% {
+                transform: rotateX(50deg) skewX(25deg)
+            }
+            40% {
+                transform: rotateX(45deg) skewX(25deg)
+            }
+            50% {
+                transform: rotateX(40deg) skewX(25deg)
+            }
+            60% {
+                transform: rotateX(35deg) skewX(25deg)
+            }
+            70% {
+                transform: rotateX(30deg) skewX(25deg)
+            }
+            75% {
+                transform: rotateX(25deg) skewX(25deg)
+            }
+            80% {
+                transform: rotateX(20deg) skewX(25deg)
+            }
+            85% {
+                transform: rotateX(15deg) skewX(15deg)
+            }
+            90% {
+                transform: rotateX(15deg) skewX(10deg)
+            }
+
+            92% {
+                transform: rotateX(10deg) skewX(5deg)
+            }
+            95% {
+                transform: rotateX(15deg) skewX(4deg)
+            }
+            97% {
+                transform: rotateX(15deg) skewX(2deg)
+            }
+            100% {
+                transform: rotateX(15deg) skewX(0deg)
+            }
+
+
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="roof"></div>
+            <div class="vent"></div>
+            <div class="door">
+                <div class="door_knob"></div>
+
+            </div>
+            <div class="window"></div>
+            <div class="window2"></div>
+            <div class="wall"></div>
+            <div class="louvers"></div>
+            <div class="louvers1"></div>
+            <div class="louvers2"></div>
+            <div class="louvers3"></div>
+            <div class="louvers4"></div>
+            <div class="louvers5"></div>
+            <div class="louvers6"></div>
+            <div class="louvers7"></div>
+
+        </div>
+
+    </body>
+</html>
